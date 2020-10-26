@@ -1,4 +1,5 @@
 import {Moteur} from './Moteur';
+import {StationEssence} from './StationEssence/StationEssence'
 export class Vehicule {
     private marque:String;
     private couleur:String;
@@ -42,6 +43,12 @@ export class Vehicule {
 
     public setMoteur(moteur:Moteur) : void {
         this.moteur = moteur;
+    }
+
+    public faireLePleinEssence(station: StationEssence, nbLitre:number) {
+        var total:number = nbLitre * station.prixEssence();
+        var message:String = 'Votre quantité est de : '+nbLitre+', votre montant est de '+total+'€';
+        return message;
     }
 
 }

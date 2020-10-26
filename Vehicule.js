@@ -32,6 +32,11 @@ var Vehicule = /** @class */ (function () {
     Vehicule.prototype.setMoteur = function (moteur) {
         this.moteur = moteur;
     };
+    Vehicule.prototype.faireLePleinEssence = function (station, nbLitre) {
+        var total = nbLitre * station.prixEssence();
+        var message = 'Votre quantité est de : ' + nbLitre + ', votre montant est de ' + total + '€';
+        return message;
+    };
     return Vehicule;
 }());
 exports.Vehicule = Vehicule;
